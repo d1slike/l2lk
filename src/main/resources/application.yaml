@@ -1,3 +1,8 @@
+server:
+  port: 8099
 spring:
   datasource:
-    use
+    url: jdbc:mysql://localhost/server
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.jdbc.Driver

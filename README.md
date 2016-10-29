@@ -16,6 +16,6 @@ tsd install
 ```
 npm start
 ```
-* [http://localhost:3000](http://localhost:3000)
+* [http://localhost:8080](http://localhost:8080)
 
 _Все изменения в коде сразу подгружаются в браузере_
