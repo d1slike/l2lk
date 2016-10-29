@@ -1,6 +1,8 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+/app/dist/
+/app/node_modules
 
 ### STS ###
 .apt_generated
@@ -23,3 +25,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/app/tsd.json
+/app/typings
