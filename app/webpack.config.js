@@ -1,7 +1,7 @@
 module.exports = {
     entry: getEntry(),
     output: {
-        publicPath: 'http://localhost:3000/',
+        publicPath: 'http://localhost:8080/',
         filename: 'dist/bundle.js'
     },
     devtool: 'eval',

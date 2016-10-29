@@ -25,5 +25,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-/app/tsd.json
 /app/typings
