@@ -15,16 +15,6 @@ module.exports = {
         ],
         loaders: [
             {
-                test: /\.scss$/,
-                include: /src/,
-                loaders: [
-                    'style',
-                    'css',
-                    'autoprefixer?browsers=last 3 versions',
-                    'sass?outputStyle=expanded'
-                ]
-            },
-            {
                 test: /\.tsx?$/,
                 exclude: /(node_modules)/,
                 loaders: [
@@ -33,9 +23,6 @@ module.exports = {
                 ]
             }
         ]
-    },
-    resolve: {
-        extensions: ["", ".webpack.js", ".web.js", ".js", ".ts", ".tsx"]
     }
 };
 

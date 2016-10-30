@@ -7,6 +7,6 @@
     },
     "files": [
         "./src/index.tsx",
-        "typings/tsd.d.ts"
+        "typings/index.d.ts"
     ]
 }
