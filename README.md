@@ -8,10 +8,7 @@
 cd .../rootProjectPath/app
 ```
 ```
-npm install
-```
-```
-tsd install
+npm run init
 ```
 ```
 npm start
