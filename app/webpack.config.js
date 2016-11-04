@@ -1,38 +1,39 @@
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
+
 module.exports = {
-    entry: getEntry(),
+    entry: "./src/index.js",
     output: {
-        publicPath: 'http://localhost:8080/',
-        filename: 'dist/bundle.js'
+        path: __dirname,
+        filename: "bundle.js",
+        publicPath: "/static/"
     },
-    devtool: 'eval',
+
     module: {
-        preLoaders: [
-            {
-                test: /\.tsx?$/,
-                exclude: /(node_modules)/,
-                loader: 'source-map'
-            }
-        ],
         loaders: [
             {
-                test: /\.tsx?$/,
-                exclude: /(node_modules)/,
-                loaders: [
-                    'babel',
-                    'ts-loader'
-                ]
+                test: /\.jsx?$/,
+                loader: "babel",
+                include: path.resolve(__dirname, "src"),
+                query: {
+                    presets: ["es2015", "stage-0", "react", "react-hmre"]
+                }
+            },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, "css"),
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             }
         ]
-    }
+    },
+
+    resolve: {
+        extensions: ['', '.js', '.jsx', '.css'],
+        modulesDirectories: ['node_modules']
+    },
+
+    plugins: [
+        new ExtractTextPlugin('bundle.css')
+    ]
+
 };
-
-function getEntry() {
-    var entry = [];
-
-    if (process.env.NODE_ENV !== 'production') { //only want hot reloading when in dev.
-        entry.push('webpack-dev-server/client?http://localhost:8080');
-        entry.push('webpack/hot/only-dev-server');
-    }
-    entry.push('./src/index.tsx');
-    return entry;
-}
