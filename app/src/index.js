@@ -8,7 +8,9 @@ import configureStore from "./store/Store";
 import * as pathConst from "./const/PathConstats";
 import {createHistory} from "history";
 
+
 const store = configureStore({});
+
 const routes = <Route path={pathConst.ROOT} component={MainPage}>
     <IndexRoute component={AccountPage}/> //TODO add components
     <Route path={pathConst.CHARS}/>
