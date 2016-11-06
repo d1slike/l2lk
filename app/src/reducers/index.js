@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
-import accountReducer from "./account";
+import account from "./account";
 
 export default combineReducers({
-    accountReducer
+    account,
     //TODO add here
 });
