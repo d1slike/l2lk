@@ -2,6 +2,7 @@ import React from "react";
 import FlatButton from "material-ui/FlatButton";
 import IconButton from "material-ui/IconButton";
 import Icon from "../../components/Icon";
+import * as Configs from "../../const/Configs";
 
 export default class Toolbar extends React.Component {
 
@@ -14,7 +15,7 @@ export default class Toolbar extends React.Component {
         return <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
             <div className="container-fluid">
                 <div className="navbar-header">
-                    <a className="navbar-brand">L2LK</a>
+                    <a className="navbar-brand">{Configs.PRJECT_NAME}</a>
                 </div>
                 <ul className="nav navbar-nav navbar-left">
                     <li>

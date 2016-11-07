@@ -8,9 +8,16 @@ const initialState = {
         lastAccessDate: "01.01.2016",
         state: "Не заблокирован",
         premium: "Премиальная подписка не оформлена",
-        lastIp: "101.101.101.1",
-        balance: 118
-    }
+        lastIp: "101.101.101.1"
+    },
+    players: [
+        {
+            name: "test1",
+        },
+        {
+            name: "test2",
+        }
+    ]
 };
 
 export default function account(state = initialState, action) {

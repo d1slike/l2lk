@@ -1,0 +1,1 @@
+export const PRJECT_NAME = "L2LK";

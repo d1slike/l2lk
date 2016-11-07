@@ -4,8 +4,9 @@ import {withRouter} from "react-router";
 import {bindActionCreators} from "redux";
 import Toolbar from "./_MainPage/Toolbar";
 import * as accountActions from "../actions/accountActions";
+import * as balanceActions from "../actions/balanceActions";
 import * as Paths from "../const/PathConstats";
-import Menu from "material-ui/Menu";
+import Icon from "../components/Icon";
 import MenuItem from "material-ui/MenuItem";
 
 class MainPage extends React.Component {
@@ -13,17 +14,17 @@ class MainPage extends React.Component {
     static propTypes = {
         children: React.PropTypes.element, //from router
         router: React.PropTypes.object, //from withRouter
-        dataIsFetched: React.PropTypes.bool,
-        account: React.PropTypes.object,
-        menu: React.PropTypes.object,
-        menuActions: React.PropTypes.any,
-        accountActions: React.PropTypes.any,
+        account: React.PropTypes.object.isRequired,
+        balance: React.PropTypes.object.isRequired,
+        accountActions: React.PropTypes.any.isRequired,
+        balanceActions: React.PropTypes.any.isRequired,
     };
 
     componentDidMount() {
         if (!this.props.dataIsFetched) {
             this.props.accountActions.fetchAccountData();
         }
+        this.props.balanceActions.fetchBalanceData();
     }
 
     moveTo(target) {
@@ -33,26 +34,27 @@ class MainPage extends React.Component {
     render() {
         return <div id="wrapper">
             <Toolbar
-                balance={this.props.account.data.balance || 0.0}
+                balance={this.props.balance.balance || 0.0}
                 showButtons={this.props.account.dataIsFetched || false}
             />
             <div id="sidebar-wrapper">
                 <ul className="sidebar-nav">
                     <li>
-                        <Menu>
-                            <MenuItem primaryText={"Главная"} onClick={this.moveTo.bind(this, Paths.ROOT)}/>
-                            <MenuItem primaryText={"Персонажи"} onClick={this.moveTo.bind(this, Paths.CHARS)}/>
-                            <MenuItem primaryText={"Статистика"} onClick={this.moveTo.bind(this, Paths.STATISTIC)}/>
-                            <MenuItem primaryText={"Магазин"} onClick={this.moveTo.bind(this, Paths.SHOP)}/>
-                            <MenuItem primaryText={"Счет"} onClick={this.moveTo.bind(this, Paths.CASH)}/>
-                        </Menu>;
+                        <MenuItem leftIcon={<Icon name="account_box"/>} primaryText={"Главная"}
+                                  onClick={this.moveTo.bind(this, Paths.ROOT)}/>
+                        <MenuItem leftIcon={<Icon name="supervisor_account"/>} primaryText={"Персонажи"}
+                                  onClick={this.moveTo.bind(this, Paths.CHARS)}/>
+                        <MenuItem leftIcon={<Icon name="show_chart"/>} primaryText={"Статистика"}
+                                  onClick={this.moveTo.bind(this, Paths.STATISTIC)}/>
+                        <MenuItem leftIcon={<Icon name="shopping_cart"/>} primaryText={"Магазин"}
+                                  onClick={this.moveTo.bind(this, Paths.SHOP)}/>
+                        <MenuItem leftIcon={<Icon name="account_balance_wallet"/>} primaryText={"Счет"}
+                                  onClick={this.moveTo.bind(this, Paths.CASH)}/>
                     </li>
                 </ul>
             </div>
             <div className="page-content-wrapper">
-                <div className="container-fluid">
                     {this.props.children}
-                </div>
             </div>
         </div>
     };
@@ -60,13 +62,15 @@ class MainPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        account: state.account
+        account: state.account,
+        balance: state.balance
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         accountActions: bindActionCreators(accountActions, dispatch),
+        balanceActions: bindActionCreators(balanceActions, dispatch)
     }
 }
 MainPage = withRouter(MainPage);
