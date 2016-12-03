@@ -11,11 +11,6 @@ import StatisticPage from "./pages/StatisticPage";
 import configureStore from "./store/Store";
 import * as pathConst from "./const/PathConstats";
 import {createHistory} from "history";
-import injectTapEventPlugin from "react-tap-event-plugin";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import "../css/base.css";
-
-injectTapEventPlugin(); //for material ui
 
 const store = configureStore({});
 
@@ -34,16 +29,14 @@ const appHistory = useRouterHistory(createHistory)({
 class Main extends React.Component {
 
     render() {
-        return <MuiThemeProvider>
-            <Provider store={store}>
+        return <Provider store={store}>
                 <Router history={appHistory}>
                     {routes}
                 </Router>
             </Provider>
-        </MuiThemeProvider>
     }
 }
 
 render(
-    <Main/>, document.getElementById("container")
+    <Main/>, document.getElementById("bundle")
 );

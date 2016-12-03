@@ -26,3 +26,4 @@ dist/
 nbdist/
 .nb-gradle/
 /app/typings
+node_modules
