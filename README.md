@@ -5,7 +5,7 @@
 * Установить [NodeJS](https://nodejs.org/en/download/)
 * Запустить NodeJS Command prompt(Windows)
 ```
-cd .../rootProjectPath/app
+cd .../rootProject
 ```
 ```
 npm install
