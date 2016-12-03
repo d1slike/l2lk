@@ -10,9 +10,20 @@ cd .../rootProjectPath/app
 ```
 npm install
 ```
+* Linux:
 ```
-npm start
+npm run dev
 ```
-* [http://localhost:8080](http://localhost:8080)
+* Windows:
+```
+npm run devw
+```
+
+* Prod:
+```
+npm run build/buildw
+```
+
+* [http://localhost:8088](http://localhost:8088)
 
 _Все изменения в коде сразу подгружаются в браузере_
