@@ -13,4 +13,5 @@ import "./theme/App";
 import "./theme/AppVendor";
 import "./theme/AppForm";
 import "./theme/AppNavigation";
+import "./theme/AppOffcanvas";
 import "./index";

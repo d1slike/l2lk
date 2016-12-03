@@ -7,10 +7,11 @@ export class CharactersPage extends React.Component {
     };
 
     render() {
-        {
-            "Players"
-        }
+        return <div className="row">
+            players
+        </div>
     }
+
 }
 
 function mapStateToProps(state) {
