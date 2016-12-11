@@ -1,2 +1,5 @@
 server:
   port: 8899
+data:
+  separated.login.server: false
+  server.profile: L2F
