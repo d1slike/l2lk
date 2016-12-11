@@ -11,11 +11,11 @@ public class DAOAccessor {
         this.gameServerTemplate = gameServerTemplate;
     }
 
-    public JdbcTemplate getLoginServerTemplate() {
+    public JdbcTemplate loginServerTemplate() {
         return loginServerTemplate;
     }
 
-    public JdbcTemplate getGameServerTemplate() {
+    public JdbcTemplate gameServerTemplate() {
         return gameServerTemplate;
     }
 }

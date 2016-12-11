@@ -131,7 +131,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         final StringBuilder builder = new StringBuilder();
         builder.append(ex.getMethod());
         builder.append(" method is not supported for this request. Supported methods are ");
-        ex.getSupportedHttpMethods().forEach(t -> builder.append(t + " "));
+        ex.getSupportedHttpMethods().forEach(t -> builder.append(t).append(" "));
         RestResponse<String> response = new RestResponse<>(400, ErrorText.BAD_REQUEST,
                 Collections.singletonList(builder.toString()));
         return new ResponseEntity<>(response, new HttpHeaders(), HttpStatus.OK);
