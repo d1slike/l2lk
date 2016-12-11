@@ -13,7 +13,7 @@ export default class Header extends React.Component {
                         <li className="header-nav-brand">
                             <div className="brand-holder">
                                 <a href="">
-                                    <span className="text-lg text-bold text-primary">{Cfg.PRJECT_NAME}</span>
+                                    <span className="text-lg text-bold text-primary">{Cfg.PROJECT_NAME}</span>
                                 </a>
                             </div>
                         </li>

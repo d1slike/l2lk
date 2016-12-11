@@ -1,1 +1,1 @@
-export const PRJECT_NAME = "L2LK";
+export const PROJECT_NAME = "L2LK";

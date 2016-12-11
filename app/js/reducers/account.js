@@ -4,21 +4,21 @@ const initialState = {
     data: {
         login: "test",
         email: "test@test",
-        registerDate: "30.05.2010",
+        registrationDate: "30.05.2010",
         lastAccessDate: "01.01.2016",
-        state: "Не заблокирован",
-        premium: "Премиальная подписка не оформлена",
+        state: {
+            ban: false,
+            banExpireDate: null,
+        },
+        premiumState: {
+            premium: false,
+            premiumExpireDate: null
+        },
         lastIp: "101.101.101.1"
     },
-    players: [
-        {
-            name: "test1",
-        },
-        {
-            name: "test2",
-        }
-    ]
+    dataIsFetched: false
 };
+
 
 export default function account(state = initialState, action) {
     switch (action.type) {

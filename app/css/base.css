@@ -6975,7 +6975,7 @@ section.style-info .btn-flat:hover,
 }
 
 .style-image {
-    background-image: url('../image/graphics/bg.jpg');
+    background-image: url('../image/graphics/acc.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     filter: saturate(200%);
